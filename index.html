@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JCELl</title>
+  <meta name="description" content="Tu nueva laptop o celular hoy mismo. Paga al contado o en cómodas cuotas. Equipos originales con garantía real.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyan: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+            },
+            slate: {
+              850: '#1a2332',
+              950: '#0b1120',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow': '0 0 20px rgba(6, 182, 212, 0.35)',
+            'glow-lg': '0 0 40px rgba(6, 182, 212, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+  <!-- ========== HEADER ========== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-violet-500 flex items-center justify-center shadow-glow">
+            <i data-lucide="smartphone" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="text-xl font-bold tracking-tight">
+            J<span class="text-cyan-400">cell</span>
+          </span>
+        </a>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#inicio" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Inicio</a>
+          <a href="#catalogo" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Catálogo</a>
+          <a href="#credito" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Modalidad Crédito</a>
+          <a href="#beneficios" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Beneficios</a>
+          <a href="#ubicacion" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition">Ubicación</a>
+        </nav>
+        
+        <!-- CTA WhatsApp Desktop -->
+        <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20sobre%20un%20equipo" 
+           target="_blank" rel="noopener"
+           class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-sm font-semibold hover:from-cyan-400 hover:to-cyan-500 transition shadow-glow hover:shadow-glow-lg">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          WhatsApp
+        </a>
+        
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800 transition" aria-label="Abrir menú">
+          <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-800">
+      <nav class="flex flex-col px-4 py-4 gap-1">
+        <a href="#inicio" class="mobile-link px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">Inicio</a>
+        <a href="#catalogo" class="mobile-link px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">Catálogo</a>
+        <a href="#credito" class="mobile-link px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">Modalidad Crédito</a>
+        <a href="#beneficios" class="mobile-link px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">Beneficios</a>
+        <a href="#ubicacion" class="mobile-link px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">Ubicación</a>
+        <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20sobre%20un%20equipo" 
+           target="_blank" rel="noopener"
+           class="mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Contactar por WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section id="inicio" class="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
+    <!-- Background effects -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950"></div>
+    <div class="absolute top-20 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-violet-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <!-- Text Content -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-medium mb-6">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            Entrega inmediata · Financiamiento fácil
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+            Tu nueva <span class="gradient-text">Laptop o Celular</span> hoy mismo
+          </h1>
+          
+          <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+            Paga <strong class="text-white">al contado</strong> o en <strong class="text-cyan-400">cómodas cuotas</strong>. 
+            Equipos 100% originales, aprobación rápida y sin complicaciones. ¡Llévatelo hoy!
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="#catalogo" 
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold hover:from-cyan-400 hover:to-cyan-500 transition shadow-glow hover:shadow-glow-lg">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              Ver Productos
+            </a>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20conocer%20los%20requisitos%20para%20crédito" 
+               target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white font-semibold hover:bg-slate-700 hover:border-cyan-500/50 transition">
+              <i data-lucide="file-check" class="w-5 h-5 text-cyan-400"></i>
+              Consultar Requisitos
+            </a>
+          </div>
+          
+          <!-- Trust badges -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-10 text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
+              Garantía real
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>
+              Aprobación rápida
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="badge-check" class="w-4 h-4 text-cyan-400"></i>
+              100% Originales
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hero Visual -->
+        <div class="relative">
+          <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl shadow-cyan-500/10">
+            <img 
+              src="img/lugar.jpeg" 
+              alt="Smartphones y tecnología de alta gama"
+              class="w-full h-72 sm:h-96 object-cover"
+              loading="eager"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            
+            <!-- Floating product cards -->
+            <div class="absolute bottom-4 left-4 right-4 flex gap-3">
+              <div class="flex-1 bg-slate-900/90 backdrop-blur-md rounded-xl p-3 border border-slate-700/50">
+                <p class="text-xs text-slate-400">Desde</p>
+                <p class="text-lg font-bold text-cyan-400">Bs. 2000</p>
+              </div>
+              <div class="flex-1 bg-slate-900/90 backdrop-blur-md rounded-xl p-3 border border-slate-700/50">
+                <p class="text-xs text-slate-400">Cuotas desde</p>
+                <p class="text-lg font-bold text-violet-400">Bs. 400/mes</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Decorative elements -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 bg-cyan-500/20 rounded-full blur-2xl"></div>
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-violet-600/20 rounded-full blur-2xl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CÓMO FUNCIONA EL CRÉDITO ========== -->
+  <section id="credito" class="py-20 md:py-28 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          ¿Cómo funciona el <span class="gradient-text">Crédito</span>?
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Proceso simple, rápido y transparente. En pocos pasos tienes tu equipo nuevo en tus manos.
+        </p>
+      </div>
+      
+      <!-- Steps -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <!-- Step 1 -->
+        <div class="card-glow relative bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 border border-cyan-500/30 flex items-center justify-center">
+            <span class="text-2xl font-bold text-cyan-400">1</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Elige tu equipo</h3>
+          <p class="text-sm text-slate-400">Selecciona el celular o laptop que más te guste de nuestro catálogo.</p>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="card-glow relative bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 border border-cyan-500/30 flex items-center justify-center">
+            <span class="text-2xl font-bold text-cyan-400">2</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Presenta requisitos</h3>
+          <p class="text-sm text-slate-400">Documentos básicos y una evaluación rápida de crédito.</p>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="card-glow relative bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 border border-cyan-500/30 flex items-center justify-center">
+            <span class="text-2xl font-bold text-cyan-400">3</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Aprobación rápida</h3>
+          <p class="text-sm text-slate-400">Respuesta en minutos. Sin trámites eternos ni burocracia.</p>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="card-glow relative bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-600/10 border border-violet-500/30 flex items-center justify-center">
+            <span class="text-2xl font-bold text-violet-400">4</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">¡Llévatelo hoy!</h3>
+          <p class="text-sm text-slate-400">Retira tu equipo de inmediato o coordina la entrega a domicilio.</p>
+        </div>
+      </div>
+      
+      <!-- Requisitos -->
+      <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 md:p-10">
+        <h3 class="text-xl font-semibold mb-6 flex items-center gap-3">
+          <i data-lucide="clipboard-list" class="w-6 h-6 text-cyan-400"></i>
+          Requisitos básicos para el financiamiento
+        </h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40">
+            <i data-lucide="id-card" class="w-5 h-5 text-cyan-400 mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-medium">Cédula de identidad</p>
+              <p class="text-sm text-slate-400">Vigente y en buen estado</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40">
+            <i data-lucide="briefcase" class="w-5 h-5 text-cyan-400 mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-medium">Comprobante de ingresos</p>
+              <p class="text-sm text-slate-400">Boleta, extracto o declaración</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40">
+            <i data-lucide="home" class="w-5 h-5 text-cyan-400 mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-medium">Factura de servicios</p>
+              <p class="text-sm text-slate-400">Luz, agua o gas (últimos 2 meses)</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40">
+            <i data-lucide="user-check" class="w-5 h-5 text-cyan-400 mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-medium">Referencias personales</p>
+              <p class="text-sm text-slate-400">2 contactos verificables</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40">
+            <i data-lucide="banknote" class="w-5 h-5 text-cyan-400 mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-medium">Inicial mínima</p>
+              <p class="text-sm text-slate-400">Desde el 20% del valor del equipo</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40">
+            <i data-lucide="calendar" class="w-5 h-5 text-cyan-400 mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-medium">Edad mínima</p>
+              <p class="text-sm text-slate-400">18 años cumplidos</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20saber%20si%20califico%20para%20crédito" 
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-white font-semibold hover:opacity-90 transition shadow-glow">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Consultar si califico por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATÁLOGO DESTACADO ========== -->
+  <section id="catalogo" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          Catálogo <span class="gradient-text">Destacado</span>
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Equipos de gama media y alta seleccionados para ti. Precios al contado y cuotas accesibles.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        
+        <!-- Product 1 -->
+        <article class="card-glow group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80" 
+                 alt="iPhone 15 Pro" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-500/90 text-xs font-semibold text-white">Nuevo</span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-cyan-400 font-medium mb-1">Apple</p>
+            <h3 class="font-semibold text-lg mb-3">iPhone 15 Pro 256GB</h3>
+            <div class="flex items-end justify-between mb-4">
+              <div>
+                <p class="text-xs text-slate-500">Al contado</p>
+                <p class="text-xl font-bold text-white">Bs. 8.999</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500">Al crédito</p>
+                <p class="text-sm font-semibold text-violet-400">Desde 280 Bs/mes</p>
+              </div>
+            </div>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20iPhone%2015%20Pro" 
+               target="_blank" rel="noopener"
+               class="block w-full text-center py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition">
+              Consultar disponibilidad
+            </a>
+          </div>
+        </article>
+        
+        <!-- Product 2 -->
+        <article class="card-glow group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=80" 
+                 alt="Samsung Galaxy S24" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-cyan-400 font-medium mb-1">Samsung</p>
+            <h3 class="font-semibold text-lg mb-3">Galaxy S24 Ultra 512GB</h3>
+            <div class="flex items-end justify-between mb-4">
+              <div>
+                <p class="text-xs text-slate-500">Al contado</p>
+                <p class="text-xl font-bold text-white">Bs. 9.499</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500">Al crédito</p>
+                <p class="text-sm font-semibold text-violet-400">Desde 295 Bs/mes</p>
+              </div>
+            </div>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Galaxy%20S24%20Ultra" 
+               target="_blank" rel="noopener"
+               class="block w-full text-center py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition">
+              Consultar disponibilidad
+            </a>
+          </div>
+        </article>
+        
+        <!-- Product 3 -->
+        <article class="card-glow group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80" 
+                 alt="MacBook Air M3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-violet-500/90 text-xs font-semibold text-white">Popular</span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-cyan-400 font-medium mb-1">Apple</p>
+            <h3 class="font-semibold text-lg mb-3">MacBook Air M3 15"</h3>
+            <div class="flex items-end justify-between mb-4">
+              <div>
+                <p class="text-xs text-slate-500">Al contado</p>
+                <p class="text-xl font-bold text-white">Bs. 11.299</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500">Al crédito</p>
+                <p class="text-sm font-semibold text-violet-400">Desde 350 Bs/mes</p>
+              </div>
+            </div>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20MacBook%20Air%20M3" 
+               target="_blank" rel="noopener"
+               class="block w-full text-center py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition">
+              Consultar disponibilidad
+            </a>
+          </div>
+        </article>
+        
+        <!-- Product 4 -->
+        <article class="card-glow group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&q=80" 
+                 alt="ASUS ROG Gaming" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-cyan-400 font-medium mb-1">ASUS</p>
+            <h3 class="font-semibold text-lg mb-3">ROG Strix G16 RTX 4060</h3>
+            <div class="flex items-end justify-between mb-4">
+              <div>
+                <p class="text-xs text-slate-500">Al contado</p>
+                <p class="text-xl font-bold text-white">Bs. 10.799</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500">Al crédito</p>
+                <p class="text-sm font-semibold text-violet-400">Desde 335 Bs/mes</p>
+              </div>
+            </div>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20ASUS%20ROG%20Strix" 
+               target="_blank" rel="noopener"
+               class="block w-full text-center py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition">
+              Consultar disponibilidad
+            </a>
+          </div>
+        </article>
+        
+        <!-- Product 5 -->
+        <article class="card-glow group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1592890288564-76628a30a657?w=500&q=80" 
+                 alt="Xiaomi 14" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-cyan-400 font-medium mb-1">Xiaomi</p>
+            <h3 class="font-semibold text-lg mb-3">Xiaomi 14 512GB</h3>
+            <div class="flex items-end justify-between mb-4">
+              <div>
+                <p class="text-xs text-slate-500">Al contado</p>
+                <p class="text-xl font-bold text-white">Bs. 5.499</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500">Al crédito</p>
+                <p class="text-sm font-semibold text-violet-400">Desde 170 Bs/mes</p>
+              </div>
+            </div>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Xiaomi%2014" 
+               target="_blank" rel="noopener"
+               class="block w-full text-center py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition">
+              Consultar disponibilidad
+            </a>
+          </div>
+        </article>
+        
+        <!-- Product 6 -->
+        <article class="card-glow group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&q=80" 
+                 alt="Lenovo ThinkPad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-cyan-400 font-medium mb-1">Lenovo</p>
+            <h3 class="font-semibold text-lg mb-3">ThinkPad E14 Gen 5</h3>
+            <div class="flex items-end justify-between mb-4">
+              <div>
+                <p class="text-xs text-slate-500">Al contado</p>
+                <p class="text-xl font-bold text-white">Bs. 6.299</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500">Al crédito</p>
+                <p class="text-sm font-semibold text-violet-400">Desde 195 Bs/mes</p>
+              </div>
+            </div>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20ThinkPad%20E14" 
+               target="_blank" rel="noopener"
+               class="block w-full text-center py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition">
+              Consultar disponibilidad
+            </a>
+          </div>
+        </article>
+        
+        <!-- Product 7 -->
+        <article class="card-glow group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500&q=80" 
+                 alt="Google Pixel 8" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-cyan-400 font-medium mb-1">Google</p>
+            <h3 class="font-semibold text-lg mb-3">Pixel 8 Pro 256GB</h3>
+            <div class="flex items-end justify-between mb-4">
+              <div>
+                <p class="text-xs text-slate-500">Al contado</p>
+                <p class="text-xl font-bold text-white">Bs. 7.199</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500">Al crédito</p>
+                <p class="text-sm font-semibold text-violet-400">Desde 225 Bs/mes</p>
+              </div>
+            </div>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20Pixel%208%20Pro" 
+               target="_blank" rel="noopener"
+               class="block w-full text-center py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition">
+              Consultar disponibilidad
+            </a>
+          </div>
+        </article>
+        
+        <!-- Product 8 -->
+        <article class="card-glow group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80" 
+                 alt="HP Pavilion" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-emerald-500/90 text-xs font-semibold text-white">Oferta</span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-cyan-400 font-medium mb-1">HP</p>
+            <h3 class="font-semibold text-lg mb-3">Pavilion 15 Ryzen 7</h3>
+            <div class="flex items-end justify-between mb-4">
+              <div>
+                <p class="text-xs text-slate-500">Al contado</p>
+                <p class="text-xl font-bold text-white">Bs. 5.899</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-slate-500">Al crédito</p>
+                <p class="text-sm font-semibold text-violet-400">Desde 185 Bs/mes</p>
+              </div>
+            </div>
+            <a href="https://wa.me/59171130128?text=Hola%2C%20quiero%20consultar%20disponibilidad%20del%20HP%20Pavilion%2015" 
+               target="_blank" rel="noopener"
+               class="block w-full text-center py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-cyan-500/10 hover:border-cyan-500/50 hover:text-cyan-400 transition">
+              Consultar disponibilidad
+            </a>
+          </div>
+        </article>
+        
+      </div>
+      
+      <p class="text-center text-slate-500 text-sm mt-10">
+        * Precios referenciales. Consulta stock y condiciones actuales por WhatsApp.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== BENEFICIOS ========== -->
+  <section id="beneficios" class="py-20 md:py-28 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-cyan-950/10 to-slate-950"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          ¿Por qué comprar con <span class="gradient-text">nosotros</span>?
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Más que una tienda: tu aliado tecnológico de confianza.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card-glow bg-slate-900/60 border border-slate-800 rounded-2xl p-7 text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/5 border border-cyan-500/20 flex items-center justify-center">
+            <i data-lucide="badge-check" class="w-7 h-7 text-cyan-400"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">100% Originales</h3>
+          <p class="text-sm text-slate-400">Equipos homologados y con sellos oficiales. Cero clones, cero riesgos.</p>
+        </div>
+        
+        <div class="card-glow bg-slate-900/60 border border-slate-800 rounded-2xl p-7 text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-600/5 border border-violet-500/20 flex items-center justify-center">
+            <i data-lucide="shield" class="w-7 h-7 text-violet-400"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Garantía Real</h3>
+          <p class="text-sm text-slate-400">Garantía oficial del fabricante + soporte local post-venta.</p>
+        </div>
+        
+        <div class="card-glow bg-slate-900/60 border border-slate-800 rounded-2xl p-7 text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/5 border border-emerald-500/20 flex items-center justify-center">
+            <i data-lucide="truck" class="w-7 h-7 text-emerald-400"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Entrega Inmediata</h3>
+          <p class="text-sm text-slate-400">Retiro en tienda el mismo día o envío express a tu ciudad.</p>
+        </div>
+        
+        <div class="card-glow bg-slate-900/60 border border-slate-800 rounded-2xl p-7 text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/5 border border-amber-500/20 flex items-center justify-center">
+            <i data-lucide="headphones" class="w-7 h-7 text-amber-400"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Atención Personalizada</h3>
+          <p class="text-sm text-slate-400">Asesoría real por WhatsApp y en tienda. Te ayudamos a elegir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== UBICACIÓN Y CONTACTO ========== -->
+  <section id="ubicacion" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          Ubicación y <span class="gradient-text">Contacto</span>
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Visítanos o escríbenos. Estamos listos para ayudarte.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Info -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+              <i data-lucide="map-pin" class="w-6 h-6 text-cyan-400"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-1">Dirección</h3>
+              <p class="text-slate-400">Av. Principal #1234, Zona Centro<br>La Paz, Bolivia</p>
+              <a href="https://maps.google.com" target="_blank" rel="noopener" 
+                 class="inline-flex items-center gap-1.5 mt-2 text-sm text-cyan-400 hover:text-cyan-300 transition">
+                Ver en Google Maps
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+              <i data-lucide="clock" class="w-6 h-6 text-cyan-400"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-1">Horarios de atención</h3>
+              <p class="text-slate-400">Lunes a Viernes: 09:00 – 19:00</p>
+              <p class="text-slate-400">Sábados: 09:00 – 14:00</p>
+              <p class="text-slate-500 text-sm mt-1">Domingos y feriados: Cerrado</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+              <i data-lucide="phone" class="w-6 h-6 text-cyan-400"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-1">Teléfono / WhatsApp</h3>
+              <a href="https://wa.me/59171130128" target="_blank" rel="noopener" 
+                 class="text-cyan-400 hover:text-cyan-300 transition font-medium">
+                +591 7000 0000
+              </a>
+            </div>
+          </div>
+          
+          <!-- Social -->
+          <div class="pt-4 border-t border-slate-800">
+            <p class="text-sm text-slate-500 mb-4">Síguenos en redes</p>
+            <div class="flex gap-3">
+              <a href="https://facebook.com" target="_blank" rel="noopener" 
+                 class="w-11 h-11 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 transition" aria-label="Facebook">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" 
+                 class="w-11 h-11 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 transition" aria-label="Instagram">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener" 
+                 class="w-11 h-11 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-cyan-500/50 hover:bg-cyan-500/10 transition" aria-label="TikTok">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.4a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.77a8.18 8.18 0 0 0 4.76 1.52V6.84a4.84 4.84 0 0 1-1-.15z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Map placeholder / CTA -->
+        <div class="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/60 min-h-[320px] flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" 
+               alt="Ubicación de la tienda" 
+               class="absolute inset-0 w-full h-full object-cover opacity-40"
+               loading="lazy">
+          <div class="relative text-center p-8">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
+              <i data-lucide="map" class="w-8 h-8 text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">¿Cómo llegar?</h3>
+            <p class="text-slate-400 mb-6 max-w-xs mx-auto">Estamos en el centro de la ciudad, con fácil acceso y estacionamiento cercano.</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold hover:from-cyan-400 hover:to-cyan-500 transition shadow-glow">
+              <i data-lucide="navigation" class="w-5 h-5"></i>
+              Abrir en Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <a href="#inicio" class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-violet-500 flex items-center justify-center">
+              <i data-lucide="smartphone" class="w-4 h-4 text-white"></i>
+            </div>
+            <span class="text-lg font-bold">Tech<span class="text-cyan-400">Fácil</span></span>
+          </a>
+          <p class="text-sm text-slate-500 leading-relaxed">
+            Tu tienda de confianza para celulares y laptops al contado o al crédito. Tecnología accesible para todos.
+          </p>
+        </div>
+        
+        <!-- Links -->
+        <div>
+          <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-400">Navegación</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#inicio" class="text-slate-500 hover:text-cyan-400 transition">Inicio</a></li>
+            <li><a href="#catalogo" class="text-slate-500 hover:text-cyan-400 transition">Catálogo</a></li>
+            <li><a href="#credito" class="text-slate-500 hover:text-cyan-400 transition">Modalidad Crédito</a></li>
+            <li><a href="#beneficios" class="text-slate-500 hover:text-cyan-400 transition">Beneficios</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-400">Legal</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#" class="text-slate-500 hover:text-cyan-400 transition">Términos y condiciones</a></li>
+            <li><a href="#" class="text-slate-500 hover:text-cyan-400 transition">Política de privacidad</a></li>
+            <li><a href="#" class="text-slate-500 hover:text-cyan-400 transition">Política de garantías</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4 text-sm uppercase tracking-wider text-slate-400">Contacto</h4>
+          <ul class="space-y-2.5 text-sm text-slate-500">
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+              +591 7000 0000
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-cyan-500"></i>
+              hola@techfacil.bo
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-cyan-500"></i>
+              La Paz, Bolivia
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-slate-600">
+          © 2026 TechFácil. Todos los derechos reservados.
+        </p>
+        <p class="text-xs text-slate-700">
+          Diseño premium · Hecho con ❤️ para Bolivia
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== BOTÓN FLOTANTE WHATSAPP ========== -->
+  <a href="https://wa.me/59171130128?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20consultar" 
+     target="_blank" rel="noopener"
+     class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg shadow-green-500/30 hover:scale-110 hover:shadow-green-500/50 transition-all duration-300 group"
+     aria-label="Chatear por WhatsApp">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+    <span class="absolute right-full mr-3 px-3 py-1.5 rounded-lg bg-slate-900 text-white text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none border border-slate-700">
+      ¿Necesitas ayuda?
+    </span>
+  </a>
+
+  <!-- ========== JAVASCRIPT (Menú móvil) ========== -->
+  <script src="script.js"></script>
+</body>
+</html>
